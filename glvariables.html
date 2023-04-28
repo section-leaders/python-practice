@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Python help and practice</title>
+<title>Local vs Global Variables</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -19,28 +19,108 @@
 <div class="reveal">
 <div class="slides">
 
-<section id="Links" class="slide">
-<h2>Python help and practice</h2>
-<li>
-    <a href="https://section-leaders.github.io/test/constants" target="_blank" title="Open the constants quiz">
-      Constants
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/debug" target="_blank" title="Open the debugging quiz">
-      Debugging
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/glvariables" target="_blank" title="Open the global variables quiz">
-      Global Variables
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/loops" target="_blank" title="Open the loops quiz">
-      Loops
-    </a>
-  </li>
+<section id="Local1" class="slide">
+<h2>Local and Global Variables</h2>
+<div class="Question MultipleChoice">
+What is the value of <span class="mb">x</span> at the end?
+<div class="Question MultipleChoice"><span class="mb"> x = 3</span>
+<div class="Question MultipleChoice"></div> <span class="mb"><span class='keyword'>def</span> mystery(y): </span></div>
+      <div class="Question MultipleChoice"></div><span class="mb">&emsp;x = y + 2</span></span>
+      <div class="Question MultipleChoice"></div><span class="mb"><span class="keyword">&emsp;return </span> x </span></span>
+  <div class="Question MultipleChoice"></div><span class="mb">x = mystery(x) </span></span>
+
+<p class="Response" data-response="Incorrect">(a) 2</p>
+
+<p class="Response" data-response="Incorrect">(b) 3</p>
+
+<p class="Response" data-response="Correct">(c) 5</p>
+
+<p class="Response" data-response="Incorrect1">(d) There would be an error</p>
+
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">The 
+<span class="mb keyword">return</span> statement
+reassigns <span class="mb">x</span> to a new value.
+Passing <span class="mb">x</span> into the <span class="mb">mystery</span>
+function adds 2 to <span class="mb">x</span>, returning 5.</p>
+<p class="Narrative Incorrect1">There is no error because all of these variables are clearly defined
+  and able to communicate with each other. 
+</p>
+</div>
+</div>
+</section>
+
+
+<section id="Local1" class="slide">
+<h2>Local and Global Variables</h2>
+<div class="Question MultipleChoice">
+What is the value of <span class="mb">x</span> at the end?
+<div class="Question MultipleChoice"><span class="mb">greeting =<span class='strlit'> "salutations"</span>
+<div class="Question MultipleChoice"></div> <span class="mb"><span class="keyword">def </span>un(statement):</span></div>
+<div class="Question MultipleChoice"></div><span class="mb"><span class="keyword">&emsp;return </span><span class='strlit'>"un"</span> + statement</span></span>
+<div class="Question MultipleChoice"></div><span class="mb">x = un(greeting)</span>
+
+<p class="Response" data-response="Incorrect">(a) "ungreeting"</p>
+
+<p class="Response" data-response="Incorrect">(b) unsalutations</p>
+
+<p class="Response" data-response="Incorrect">(c) "unstatement"</p>
+
+<p class="Response" data-response="Correct">(d) "unsalutations"</p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">The variable name that is passed into the
+  <span class="mb">un</span> function
+is different from the value of the variable. Try again! </p>
+</div>
+</div>
+</section>
+
+
+
+<section id="Local1" class="slide">
+  <h2>Local and Global Variables</h2>
+  <div class="Question MultipleChoice">
+  What would be printed at the end?
+  <div class="Question MultipleChoice"></div> <span class="mb"><span class="keyword">def </span>squaring():</span></div>
+  <div class="Question MultipleChoice"><span class="mb">&emsp;x = 4</span>
+  <div class="Question MultipleChoice"></div><span class="mb"><span class="keyword">&emsp;return </span>x**2</span></span>
+  <div class="Question MultipleChoice"></div><span class="mb">x<span class='u'>_</span>squared = <span class="bbbuiltin">squaring</span>()</span>
+  <div class="Question MultipleChoice"><span class="mb"><span class="builtin">print</span>(x)</span>
+  <p class="Response" data-response="Incorrect">(a) 16</p>
+  <p class="Response" data-response="Incorrect">(b) 4</p>
+  <p class="Response" data-response="Correct">(c) There would be an error</p>
+  <p class="Response" data-response="Incorrect">(d) 8</p>
+  <div class="NarrativeArea">
+  <p class="Narrative Correct">Correct!</p>
+  <p class="Narrative Incorrect">What does the
+  <span class="mb bbbuiltin">squaring</span> return? Can the <span class="mb"><span class="builtin">print</span></span>
+  statement access variables in the <span class="mb bbbuiltin">squaring</span> function? Try again! </p>
+  </div>
+  </div>
+  </section>
+
+
+<section id="Local1" class="slide">
+<h2>Local and Global Variables</h2>
+<div class="Question MultipleChoice">
+What is the value of <span class="mb">z</span>?
+<div class="Question MultipleChoice"><span class="mb">y = 21</span>
+<div class="Question MultipleChoice"></div> <span class="mb"><span class="keyword">def </span>what(x):</span></div>
+<div class="Question MultipleChoice"></div><span class="mb"><span class="keyword">&emsp;return </span>y + x</span></span>
+<div class="Question MultipleChoice"></div><span class="mb">z = <span class="bbbuiltin">what</span>(3)</span></span>
+<p class="Response" data-response="Correct">(a) 24</p>
+<p class="Response" data-response="Incorrect">(b) 21</p>
+<p class="Response" data-response="Incrrect">(c) There would be an error</p>
+<p class="Response" data-response="Incorrect">(d) 3</p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Where is the 
+<span class="mb">y</span> variable? Can the <span class="mb bbbuiltin">what</span>
+function access global variables? Try again! </p>
+</div>
+</div>
 </section>
 
 

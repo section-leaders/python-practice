@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Python help and practice</title>
+<title>Working with Constants</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -19,30 +19,99 @@
 <div class="reveal">
 <div class="slides">
 
-<section id="Links" class="slide">
-<h2>Python help and practice</h2>
-<li>
-    <a href="https://section-leaders.github.io/test/constants" target="_blank" title="Open the constants quiz">
-      Constants
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/debug" target="_blank" title="Open the debugging quiz">
-      Debugging
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/glvariables" target="_blank" title="Open the global variables quiz">
-      Global Variables
-    </a>
-  </li>
-   <li>
-    <a href="https://section-leaders.github.io/test/loops" target="_blank" title="Open the loops quiz">
-      Loops
-    </a>
-  </li>
+<section id="Constants1" class="slide">
+<h2>Syntax for Constants</h2>
+<div class="Question MultipleChoice">
+Which of the following styles is commonly (although not necessarily) used for variables which are <b>constant</b>?
+<p class="Response" data-response="Incorrect">(a) <span class="mb"> width = 100</span>
+    
+<p class="Response" data-response="Correct">(b) <span class="mb"> WIDTH = 100</span>
+    
+<p class="Response" data-response="Incorrect">(c) <span class="mb"> Width = 100</span>
+    
+<p class="Response" data-response="Incorrect">(d) <span class="mb"> w = 100</span>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Variables which are intended to be constants are generally styled differently from other variables, to avoid accidentally changing their values. 
+Typically, they are represented using all capital letters.
+</p>
+</div>
+</div>
 </section>
 
+<section id="Constants2" class="slide">
+<h2>Math with Constants</h2>
+<div class="Question MultipleChoice">
+With the given constants
+<span class="mb"><span class="bbcomment">WINDOW_WIDTH</span></span> and
+<span class="mb"><span class="bbcomment">SQUARE_WIDTH</span></span>,
+and a GRect object with the appropriate dimensions named <span class="mb">square</span>,
+which of the following would create a square that is horizontally centered and at the top of the window?
+<p class="Response" data-response="Incorrect">(a) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2, 0)</span></p>
+
+<p class="Response" data-response="Incorrect">(b) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 - <span class="bbcomment">SQUARE_WIDTH</span>, 0)</span></p>
+
+<p class="Response" data-response="Correct">(c) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
+
+<p class="Response" data-response="Incorrect">(d) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 + (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Objects are positioned based on their top left corner, so placing the square at half the window width
+would make the left edge of the square at the center. Thus, the square needs to be moved to the left by half its width.
+</p>
+</div>
+</div>
+</section>
+
+<section id="Constants3" class="slide">
+<h2>More Math with Constants</h2>
+<div class="Question MultipleChoice">
+Using the same constants, which of the following would create a square centered in the left half of the window and at the top?
+<p class="Response" data-response="Correct">(a) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4 - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(b) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4 - (<span class="bbcomment">SQUARE_WIDTH</span>/4), 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(c) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4, 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(d) <span class="mb"> gw.add(square, 3 * (<span class="bbcomment">WINDOW_WIDTH</span>/4) - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Objects are positioned based on their top left corner, so the square needs to be moved to the left by half its width.
+</p>
+</div>
+</div>
+</section>
+
+<section id="Constants4" class="slide">
+<h2>Loop Math with Constants</h2>
+<div class="Question MultipleChoice">
+Which of the following loops would create lines which split the window into thirds?
+  
+<p class="Response" data-response="Incorrect">(a) 
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(2): <br>
+  &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+
+<p class="Response" data-response="Correct">(b) 
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(1,3): <br>
+    &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, i*WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+
+<p class="Response" data-response="Incorrect">(c)
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(3): <br>
+  &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+  
+<p class="Response" data-response="Incorrect">(d)
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(2): <br>
+    &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, i*WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">To split the window in thirds, we want to create lines at 1/3 and 2/3 the window width. To accomplish that, we can divide the window width by three, then multiply it by the values in range(1,3).</p>
+</div>
+</div>
+</section>
 
 
 <script src="js/reveal.js"></script>
